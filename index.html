@@ -52,11 +52,27 @@
             des revenus de la matinée</span
           >
         </div>
+        <div class="hero__actions">
+          <button type="button" class="btn-print" id="printReport">
+            Imprimer / Exporter en PDF
+          </button>
+        </div>
       </div>
     </header>
 
+    <nav class="report-nav">
+      <div class="container report-nav__inner">
+        <a href="#resume">Résumé</a>
+        <a href="#etape-1">Étape 1</a>
+        <a href="#etape-2">Étape 2</a>
+        <a href="#etape-3">Étape 3</a>
+        <a href="#etape-4">Étape 4</a>
+        <a href="#etape-5">Conclusion</a>
+      </div>
+    </nav>
+
     <main class="container">
-      <section class="section section--resume">
+      <section id="resume" class="section section--resume">
         <h2><span class="section-badge">00</span> Résumé exécutif</h2>
         <div class="grid cards">
           <article class="card">
@@ -114,7 +130,7 @@
         </div>
       </section>
 
-      <section class="section step step--1">
+      <section id="etape-1" class="section step step--1">
         <h2><span class="section-badge">01</span> Étape 1 - Analyse et priorisation</h2>
         <div class="grid metrics" id="kpis"></div>
 
@@ -214,7 +230,7 @@
         </div>
       </section>
 
-      <section class="section step step--2">
+      <section id="etape-2" class="section step step--2">
         <h2><span class="section-badge">02</span> Étape 2 - Plan de communication de crise</h2>
         <div class="grid communication-grid">
           <article class="email-card mail-left">
@@ -271,31 +287,35 @@
               </div>
             </div>
             <p class="social-copy">
-              Cher(e) client(e), vous faites partie de nos clients les plus
+              💙 Cher(e) client(e), vous faites partie de nos clients les plus
               fidèles, et nous tenons à vous adresser ce message
               personnellement.
             </p>
             <p class="social-copy">
-              Certains d'entre vous ont rencontré des difficultés techniques
+              ⚠️ Certains d'entre vous ont rencontré des difficultés techniques
               lors de l'accès anticipé à la vente flash. Nous vous présentons
               nos excuses sincères.
             </p>
             <p class="social-copy">
-              En reconnaissance de votre patience :
+              🎁 En reconnaissance de votre patience :
               <br />- Code promo 10 % : VIP10-SORRY (30 jours)
               <br />- Accès VIP prolongé jusqu'à 22h00
               <br />- Remboursement intégral des commandes débitées sans
               confirmation de livraison
             </p>
             <p class="social-copy">
-              La plateforme est de nouveau opérationnelle. Les offres restent
+              ✅ La plateforme est de nouveau opérationnelle. Les offres restent
               disponibles jusqu'à minuit.
             </p>
             <p class="social-copy">
-              Contact : relation.client@entreprise.com
+              📩 Contact : relation.client@entreprise.com
+            </p>
+            <p class="social-copy">
+              🙏 Merci pour votre confiance et votre patience.
             </p>
             <p class="social-tags">
               #VenteFlash #ServiceClient #InfoTrafic #MerciPourVotreConfiance
+              #OnResteMobilises
             </p>
           </article>
 
@@ -345,7 +365,7 @@
         </div>
       </section>
 
-      <section class="section step step--3">
+      <section id="etape-3" class="section step step--3">
         <h2><span class="section-badge">03</span> Étape 3 - Rétrospective post-crise</h2>
         <div class="retro">
           <article>
@@ -407,7 +427,7 @@
         </table>
       </section>
 
-      <section class="section step step--4">
+      <section id="etape-4" class="section step step--4">
         <h2><span class="section-badge">04</span> Étape 4 - Plan de récupération financière</h2>
         <div class="grid cards">
           <article class="card">
@@ -482,18 +502,10 @@
         </table>
       </section>
 
-      <section class="section step step--5">
+      <section id="etape-5" class="section step step--5">
         <h2><span class="section-badge">05</span> Étape 5 - Conclusion stratégique</h2>
-        <div class="matrix">
-          <article>
-            <h4>Faiblesses révélées</h4>
-            <ul>
-              <li>Gestion du risque technique insuffisante.</li>
-              <li>Préparation incomplète aux pics de trafic.</li>
-              <li>Gouvernance produit à renforcer avant événements majeurs.</li>
-            </ul>
-          </article>
-          <article>
+        <div class="grid communication-grid">
+          <article class="email-card social-full conclusion-card">
             <h4>Conclusion détaillée et perspectives</h4>
             <p>
               L'incident survenu le 10 janvier 2023 constitue, par son ampleur

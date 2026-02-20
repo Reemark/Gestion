@@ -1,4 +1,4 @@
-const financialData = [
+﻿const financialData = [
   {
     timestamp: "2023-01-10 08:00:00",
     sales_amount: 5000,
@@ -22,47 +22,35 @@ const financialData = [
   },
 ];
 
-const socialData = [
-  { sentiment: "negatif" },
-  { sentiment: "negatif" },
-  { sentiment: "positif" },
-];
+const socialData = [{ sentiment: "negatif" }, { sentiment: "negatif" }, { sentiment: "positif" }];
 
 function computeKpis() {
   const totalSales = financialData.reduce((sum, d) => sum + d.sales_amount, 0);
-  const totalSuccess = financialData.reduce(
-    (sum, d) => sum + d.successful_orders,
-    0
-  );
+  const totalSuccess = financialData.reduce((sum, d) => sum + d.successful_orders, 0);
   const totalFailed = financialData.reduce((sum, d) => sum + d.failed_orders, 0);
-  const totalVisitors = financialData.reduce(
-    (sum, d) => sum + d.total_visitors,
-    0
-  );
+  const totalVisitors = financialData.reduce((sum, d) => sum + d.total_visitors, 0);
 
   const conversionRate = (totalSuccess / totalVisitors) * 100;
   const failRate = (totalFailed / (totalSuccess + totalFailed)) * 100;
   const negativeRate =
-    (socialData.filter((d) => d.sentiment === "negatif").length /
-      socialData.length) *
-    100;
+    (socialData.filter((d) => d.sentiment === "negatif").length / socialData.length) * 100;
 
   return [
     {
-      label: "CA observé (échantillon)",
+      label: "CA observe (echantillon)",
       target: totalSales,
       decimals: 0,
       prefix: "",
       suffix: " EUR",
-      hint: "données fictives fournies",
+      hint: "donnees fictives fournies",
     },
     {
-      label: "Taux d'échec commandes",
+      label: "Taux d'echec commandes",
       target: failRate,
       decimals: 1,
       prefix: "",
       suffix: "%",
-      hint: `${totalFailed} échecs / ${totalSuccess + totalFailed} tentatives`,
+      hint: `${totalFailed} echecs / ${totalSuccess + totalFailed} tentatives`,
     },
     {
       label: "Conversion visiteurs",
@@ -70,15 +58,15 @@ function computeKpis() {
       decimals: 1,
       prefix: "",
       suffix: "%",
-      hint: `${totalSuccess} commandes réussies`,
+      hint: `${totalSuccess} commandes reussies`,
     },
     {
-      label: "Sentiment négatif social",
+      label: "Sentiment negatif social",
       target: negativeRate,
       decimals: 0,
       prefix: "",
       suffix: "%",
-      hint: "pression réputationnelle élevée",
+      hint: "pression reputationnelle elevee",
     },
   ];
 }
@@ -92,9 +80,7 @@ function formatCount(value, decimals, prefix = "", suffix = "") {
 }
 
 function animateCountup(el, options = {}) {
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const target = Number(options.target ?? el.dataset.target ?? 0);
   const decimals = Number(options.decimals ?? el.dataset.decimals ?? 0);
@@ -161,3 +147,29 @@ function renderInlineCountups() {
 
 renderKpis();
 renderInlineCountups();
+
+const printButton = document.getElementById("printReport");
+if (printButton) {
+  printButton.addEventListener("click", () => window.print());
+}
+
+const revealTargets = document.querySelectorAll("main .section");
+revealTargets.forEach((el) => el.classList.add("reveal"));
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealTargets.forEach((el) => observer.observe(el));
+} else {
+  revealTargets.forEach((el) => el.classList.add("is-visible"));
+}
