@@ -1,0 +1,525 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapport de Crise - Vente Flash E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <div class="hero__brand">
+          <img src="Image1.png" alt="Logo" class="hero__logo" />
+          <p class="hero__author">Rédigé par <strong>Lesly AIKPE</strong></p>
+        </div>
+        <p class="eyebrow">Rapport opérationnel - Product Owner</p>
+        <h1>Gestion d'une crise majeure pendant une vente flash de 24h</h1>
+        <p class="lead">
+          Panne critique à 10h00 : surcharge des serveurs + bug de paiement.
+          Objectif :
+          rétablir la plateforme, protéger la marque et sécuriser la fin de
+          journée.
+        </p>
+        <div class="hero__meta">
+          <span>Date du scénario : 10 janvier 2023</span>
+          <span
+            >Fenêtre de crise : 10h00 -> 13h00 (<strong
+              class="countup-inline"
+              data-target="3"
+              data-decimals="0"
+              data-suffix="h"
+              >3h</strong
+            >)</span
+          >
+          <span
+            >Impact estimé :
+            <strong
+              class="countup-inline"
+              data-target="50"
+              data-decimals="0"
+              data-prefix="-"
+              data-suffix="%"
+              >-50%</strong
+            >
+            des revenus de la matinée</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section section--resume">
+        <h2><span class="section-badge">00</span> Résumé exécutif</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Contexte</h3>
+            <p>
+              Le jour de la vente flash annuelle, générant
+              <strong
+                class="countup-inline"
+                data-target="40"
+                data-decimals="0"
+                data-suffix="%"
+                >40%</strong
+              >
+              du chiffre
+              d'affaires trimestriel, la plateforme a subi une panne majeure à
+              10h00 lors du pic d'affluence.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Causes identifiées</h3>
+            <ul>
+              <li>Surcharge des serveurs (CPU &gt; 95 %, mémoire &gt; 90 %).</li>
+              <li>Bug critique du module de paiement bloquant les transactions.</li>
+              <li>Absence de tests de charge post-déploiement.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Impact business</h3>
+            <ul>
+              <li>
+                <strong
+                  class="countup-inline"
+                  data-target="3"
+                  data-decimals="0"
+                  data-suffix=" heures"
+                  >3 heures</strong
+                >
+                d'interruption.
+              </li>
+              <li>
+                Perte estimée :
+                <strong
+                  class="countup-inline"
+                  data-target="50"
+                  data-decimals="0"
+                  data-suffix="%"
+                  >50%</strong
+                >
+                des revenus prévus sur la matinée.
+              </li>
+              <li>Hausse significative des commandes échouées.</li>
+              <li>Dégradation forte de l'image de marque, surtout côté VIP.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section step step--1">
+        <h2><span class="section-badge">01</span> Étape 1 - Analyse et priorisation</h2>
+        <div class="grid metrics" id="kpis"></div>
+
+        <h3>Les 3 priorités critiques</h3>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Priorité 1 - Rétablir la capacité serveur</h3>
+            <p><strong>Objectif :</strong> restaurer l'accessibilité de la plateforme.</p>
+            <ul>
+              <li>Scaling horizontal (ajout de serveurs).</li>
+              <li>Activation CDN et cache renforcé.</li>
+              <li>Limitation temporaire du trafic si nécessaire.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Priorité 2 - Corriger le bug paiement</h3>
+            <p><strong>Objectif :</strong> réactiver les transactions.</p>
+            <ul>
+              <li>Rollback vers une version stable.</li>
+              <li>Isolation du module défectueux.</li>
+              <li>Tests rapides en environnement de staging.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Priorité 3 - Communication proactive</h3>
+            <p><strong>Objectif :</strong> maintenir la confiance.</p>
+            <ul>
+              <li>Message public sur les réseaux sociaux.</li>
+              <li>Communication dédiée aux clients VIP.</li>
+              <li>Briefing sponsor toutes les 60 minutes.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3>Matrice MoSCoW</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Élément</th>
+              <th>Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag must">MUST</span></td>
+              <td>Corriger le bug paiement</td>
+              <td>Bloque 100 % des revenus transactionnels.</td>
+            </tr>
+            <tr>
+              <td><span class="tag must">MUST</span></td>
+              <td>Augmenter la capacité serveurs</td>
+              <td>Cause racine de la saturation au pic de charge.</td>
+            </tr>
+            <tr>
+              <td><span class="tag must">MUST</span></td>
+              <td>Communication clients immédiate</td>
+              <td>Préservation de l'image et réduction du churn.</td>
+            </tr>
+            <tr>
+              <td><span class="tag should">SHOULD</span></td>
+              <td>Rapport sponsors</td>
+              <td>Pilotage stratégique et arbitrage direction.</td>
+            </tr>
+            <tr>
+              <td><span class="tag should">COULD</span></td>
+              <td>Compensation commerciale</td>
+              <td>Rétention et récupération de la confiance client.</td>
+            </tr>
+            <tr>
+              <td><span class="tag wont">WON'T</span></td>
+              <td>Amélioration UX hors incident</td>
+              <td>Non critique pendant la fenêtre de crise.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Plan de priorisation équipe technique</h3>
+        <div class="matrix">
+          <article>
+            <h4>Décisions immédiates</h4>
+            <ul>
+              <li>Stopper toute nouvelle feature.</li>
+              <li>Mobiliser 100 % des ressources sur l'incident.</li>
+              <li>Créer une cellule de décision PO + Lead Tech + SRE.</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Exécution opérationnelle</h4>
+            <ul>
+              <li>Fix paiement.</li>
+              <li>Scaling infrastructure.</li>
+              <li>QA rapide ciblée uniquement sur checkout.</li>
+              <li>Monitoring temps réel toutes les 15 minutes.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section step step--2">
+        <h2><span class="section-badge">02</span> Étape 2 - Plan de communication de crise</h2>
+        <div class="grid communication-grid">
+          <article class="email-card mail-left">
+            <div class="email-head">
+              <p><strong>De :</strong> Product Owner principal</p>
+              <p><strong>À :</strong> Directeur Produit + Direction Générale</p>
+              <p><strong>Objet :</strong> Incident critique - Vente Flash</p>
+            </div>
+            <div class="email-body">
+              <p>Bonjour,</p>
+              <p>
+                Je vous contacte pour vous informer d'un incident critique en
+                cours sur notre plateforme. Depuis 10h00 ce matin, le module de
+                paiement est indisponible en raison d'une combinaison entre une
+                surcharge des serveurs au moment du pic de trafic et une erreur
+                applicative introduite par la mise à jour déployée la veille.
+                Aucune donnée client n'a été compromise.
+              </p>
+              <p><strong>Impact estimé :</strong></p>
+              <p>
+                – 3 heures d'interruption totale des transactions<br />
+                – Perte estimée : 50 % des revenus de la tranche 10h-13h, soit
+                environ 7 500 EUR<br />
+                – Fort mécontentement sur les réseaux sociaux, notamment des
+                clients VIP
+              </p>
+              <p><strong>Actions engagées immédiatement :</strong></p>
+              <p>
+                – Scaling d'urgence de l'infrastructure en cours - cible : CPU
+                &lt; 70 % sur tous les serveurs<br />
+                – Rollback du module paiement en cours - objectif : endpoint
+                /payment opérationnel avant 13h00<br />
+                – File d'attente virtuelle activée côté checkout pour lisser le
+                trafic résiduel<br />
+                – Communication clients multicanale déployée (réseaux sociaux +
+                email VIP)
+              </p>
+              <p>
+                Je reste joignable en direct. Prochain point de situation à
+                12h00, puis 14h00. Si la situation évolue significativement
+                avant ces horaires, je vous contacte sans attendre.
+              </p>
+              <p>Cordialement,<br />Le Product Owner principal</p>
+            </div>
+          </article>
+
+          <article class="card social-post social-full">
+            <h3>Message clients mécontents (publication réseaux sociaux)</h3>
+            <div class="social-head">
+              <span class="social-avatar">SC</span>
+              <div>
+                <p class="social-name">Service Client Officiel</p>
+                <p class="social-meta">Publication prioritaire • il y a 1 min</p>
+              </div>
+            </div>
+            <p class="social-copy">
+              Cher(e) client(e), vous faites partie de nos clients les plus
+              fidèles, et nous tenons à vous adresser ce message
+              personnellement.
+            </p>
+            <p class="social-copy">
+              Certains d'entre vous ont rencontré des difficultés techniques
+              lors de l'accès anticipé à la vente flash. Nous vous présentons
+              nos excuses sincères.
+            </p>
+            <p class="social-copy">
+              En reconnaissance de votre patience :
+              <br />- Code promo 10 % : VIP10-SORRY (30 jours)
+              <br />- Accès VIP prolongé jusqu'à 22h00
+              <br />- Remboursement intégral des commandes débitées sans
+              confirmation de livraison
+            </p>
+            <p class="social-copy">
+              La plateforme est de nouveau opérationnelle. Les offres restent
+              disponibles jusqu'à minuit.
+            </p>
+            <p class="social-copy">
+              Contact : relation.client@entreprise.com
+            </p>
+            <p class="social-tags">
+              #VenteFlash #ServiceClient #InfoTrafic #MerciPourVotreConfiance
+            </p>
+          </article>
+
+          <article class="email-card mail-right">
+            <div class="email-head">
+              <p><strong>De :</strong> Product Owner Incident Lead</p>
+              <p><strong>À :</strong> Développeurs, QA, SRE / DevOps</p>
+              <p><strong>Objet :</strong> Priorité absolue - paiement + stabilité serveurs</p>
+            </div>
+            <div class="email-body">
+              <p>Équipe,</p>
+              <p>
+                Nous sommes en P0. La plateforme est en panne partielle depuis
+                10h00. Je suspends tous les développements en cours sauf les
+                deux actions ci-dessous. Chaque minute compte.
+              </p>
+              <p><strong>PRIORITÉ 1 - Module paiement (ticket #101) :</strong></p>
+              <p>
+                – Lead back-end : tenter le rollback de la mise à jour d'hier
+                soir en premier<br />
+                – Si le rollback échoue dans les 30 minutes : passer au hotfix
+                préparé<br />
+                – Objectif : endpoint /payment opérationnel avant 13h00
+              </p>
+              <p><strong>PRIORITÉ 2 - Stabilisation infrastructure (ticket #102) :</strong></p>
+              <p>
+                – DevOps : activer l'autoscaling d'urgence et allouer les
+                instances supplémentaires<br />
+                – Cible : CPU &lt; 70 % sur l'ensemble des serveurs<br />
+                – Mettre en place une file d'attente côté checkout pour lisser
+                les pics
+              </p>
+              <p><strong>Règles en vigueur jusqu'à rétablissement complet :</strong></p>
+              <p>
+                – Point de situation toutes les 30 minutes dans #incident-crise<br />
+                – Aucun déploiement sans validation explicite du Product Owner<br />
+                – Documenter chaque action (quoi, qui, heure) dans le canal incident<br />
+                – Si vous êtes bloqué(e) plus de 15 minutes : escalade immédiate, ne pas rester seul(e) sur un problème
+              </p>
+              <p>
+                <strong>Objectif global :</strong> plateforme stable avant
+                14h00.
+              </p>
+              <p>Merci à tous,<br />Le Product Owner Principal</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section step step--3">
+        <h2><span class="section-badge">03</span> Étape 3 - Rétrospective post-crise</h2>
+        <div class="retro">
+          <article>
+            <h3>Ce qui a bien fonctionné</h3>
+            <ul>
+              <li>Réactivité immédiate des développeurs.</li>
+              <li>Transparence progressive de la communication.</li>
+              <li>Collaboration inter-équipes efficace.</li>
+              <li>Monitoring existant utile pour le diagnostic rapide.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Ce qui n'a pas fonctionné</h3>
+            <ul>
+              <li>Absence de tests de charge avant événement critique.</li>
+              <li>Déploiement majeur trop proche de la vente flash.</li>
+              <li>Absence de plan de gestion de crise formalisé.</li>
+              <li>Module paiement insuffisamment isolé.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Plan d'amélioration structurel</h3>
+            <ul>
+              <li>Tests de charge obligatoires (JMeter, Gatling, K6) en CI/CD.</li>
+              <li>Architecture résiliente : autoscaling, LB, circuit breaker, cache avancé.</li>
+              <li>Politique de déploiement : gel technique, canary, feature flags, rollback auto.</li>
+              <li>Plan de communication standardisé : templates sponsor/client/social + cellule crise.</li>
+              <li>KPI de prévention : CPU &gt; 75 %, réponse &gt; 800 ms, échec paiement &gt; 2 %.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3>Plan d'actions à 30 / 60 / 90 jours</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Période</th>
+              <th>Livrables</th>
+              <th>Résultat attendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30 jours</td>
+              <td>Runbook de crise, alertes renforcées, revue du code paiement.</td>
+              <td>Réduction du temps de détection et d'escalade.</td>
+            </tr>
+            <tr>
+              <td>60 jours</td>
+              <td>Tests de charge automatisés + préproduction réaliste.</td>
+              <td>Prévention des régressions sous forte charge.</td>
+            </tr>
+            <tr>
+              <td>90 jours</td>
+              <td>Architecture résiliente multi-zones + exercices de simulation.</td>
+              <td>Continuité business sécurisée lors des pics.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section step step--4">
+        <h2><span class="section-badge">04</span> Étape 4 - Plan de récupération financière</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Actions commerciales activées (T0 à T+12h)</h3>
+            <ul>
+              <li>Prolongation de la vente de 12 heures.</li>
+              <li>E-mail de relance segmenté (abandons checkout + VIP).</li>
+              <li>Notifications push par fenêtre horaire (14h, 18h, 21h).</li>
+              <li>Offre exclusive VIP avec code dédié.</li>
+              <li>Retargeting ads sur audiences chaudes 24h.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Objectif financier et cadre de pilotage</h3>
+            <p>
+              Cible financière : récupérer entre <strong>20 % et 30 %</strong>
+              des pertes estimées sur la matinée.
+            </p>
+            <ul>
+              <li>Perte de référence : 7 500 EUR.</li>
+              <li>Objectif de récupération : 1 500 à 2 250 EUR minimum.</li>
+              <li>Seuil d'alerte : si récupération &lt; 15 % à 20h00.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Suivi de performance (temps réel)</h3>
+            <ul>
+              <li>Suivi horaire du taux de conversion post-reprise.</li>
+              <li>Suivi du panier moyen et du taux de rachat VIP.</li>
+              <li>Taux d'usage du code VIP10-SORRY.</li>
+              <li>Coût d'acquisition incrémental des campagnes de relance.</li>
+              <li>Reporting consolidé à 18h00, 21h00 et clôture minuit.</li>
+            </ul>
+          </article>
+        </div>
+        <h3>Plan d'exécution détaillé</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Fenêtre</th>
+              <th>Action</th>
+              <th>Cible</th>
+              <th>Responsable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>14h00 - 15h00</td>
+              <td>Lancement e-mail relance + post social officiel</td>
+              <td>Réactiver trafic chaud</td>
+              <td>Marketing CRM</td>
+            </tr>
+            <tr>
+              <td>15h00 - 18h00</td>
+              <td>Push notif + retargeting ads + mise à jour FAQ incident</td>
+              <td>Réduire abandon panier</td>
+              <td>Growth + Support</td>
+            </tr>
+            <tr>
+              <td>18h00 - 22h00</td>
+              <td>Séquence VIP (accès prolongé + coupon dédié)</td>
+              <td>Maximiser conversion premium</td>
+              <td>CRM VIP</td>
+            </tr>
+            <tr>
+              <td>22h00 - 00h00</td>
+              <td>Dernière vague "closing" et relance abandons checkout</td>
+              <td>Rattraper CA de fin de journée</td>
+              <td>Marketing Ops</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section step step--5">
+        <h2><span class="section-badge">05</span> Étape 5 - Conclusion stratégique</h2>
+        <div class="matrix">
+          <article>
+            <h4>Faiblesses révélées</h4>
+            <ul>
+              <li>Gestion du risque technique insuffisante.</li>
+              <li>Préparation incomplète aux pics de trafic.</li>
+              <li>Gouvernance produit à renforcer avant événements majeurs.</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Opportunités de transformation</h4>
+            <ul>
+              <li>Mettre en place une culture DevOps mature.</li>
+              <li>Renforcer la résilience technique globale.</li>
+              <li>Structurer un protocole de crise clair et répétable.</li>
+            </ul>
+            <p>
+              En tant que Product Owner, l'enjeu n'est pas seulement de résoudre
+              l'incident, mais d'empêcher sa répétition.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Rapport préparé dans une logique Product Owner : stabilisation,
+          communication, amélioration continue.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
